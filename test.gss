@@ -1,0 +1,71 @@
+/* Reserved Pseudos */
+::document
+::window
+::this
+
+/* Constraints */
+a == b;
+a <= b;
+a >= b;
+a > b;
+a < b;
+
+/* Linear Arithmetic */
+sel[property] == a + 4;
+sel[property] == 4 + a;
+
+sel[property] == 2 * b;
+sel[property] == b * 2;
+
+sel[property] == 2 * b + 4;
+
+/* Strengths */
+#light[years] == 100 !weak;
+#light[years] == 200 !medium;
+#light[years] == 300 !strong;
+#light[years] == 400 !require;
+
+/* Rulesets */
+.selector {
+  width: == 4;
+}
+
+.section > .article {
+  .someclass {
+    width: == ::window;
+    height: == 100;
+  }
+}
+
+body {
+  .container {
+    /* equate width of a <body> element with width of elements having container class */
+    &width == ^width;
+  }
+}
+
+div {
+  background-color: green;
+  width: <= 200;
+}
+
+/* Properties */
+.container {
+    width: == #elm[width];
+}
+
+.container {
+    &[width] == #elm[width];
+}
+
+/* Conditionals */
+article {
+  @if ^[width] <= 400 {
+    width: == ^[width];
+    height: == ^[height] / 2;
+  }
+  @else  {
+    width: == ^[width] / 2;
+    height: == ^[height];
+  }
+}
