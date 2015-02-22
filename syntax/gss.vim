@@ -11,6 +11,8 @@ syn match gssCombinators "&"
 syn match gssCombinators "\$"
 syn match gssCombinators "\^"
 
+" TODO: Finish fancy selectors
+
 syn match gssArithmeticOperators "+" contained
 syn match gssArithmeticOperators "-" contained
 syn match gssArithmeticOperators "*" contained
@@ -42,10 +44,11 @@ syn match gssReservedPseudos "::this"
 syn match gssConditionals "@if"
 syn match gssConditionals "@else"
 
-syn region gssComments start="\/\*" end="\*\/"
+syn match gssInlineComments "//.*$"
+syn region gssBlockComments start="\/\*" end="\*\/"
 
-syn match gssConstraintExpressions /\v.*[=<>]{1,2}.*/ contains=gssConstraintOperators,gssArithmeticOperators,gssStrengths,gssCombinators,gssPropertyAccessors,gssComments,gssReservedPseudos,gssConditionals
-syn region gssRulesets start="{" end="}" transparent contains=gssConstraintExpressions,gssComments
+syn match gssConstraintExpressions /\v.*[=<>]{1,2}.*/ contains=gssConstraintOperators,gssArithmeticOperators,gssStrengths,gssCombinators,gssPropertyAccessors,gssReservedPseudos,gssConditionals,gssBlockComments,gssInlineComments
+syn region gssRulesets start="{" end="}" transparent contains=gssConstraintExpressions,gssBlockComments
 
 hi link gssReservedPseudos Constant
 hi link gssProperty String
@@ -60,6 +63,7 @@ hi link gssPropertyAccessors Function
 
 hi link gssStrengths Special
 
-hi link gssComments Comment
+hi link gssInlineComments Comment
+hi link gssBlockComments Comment
 
 let b:current_syntax = "gss"
