@@ -4,11 +4,11 @@
 ::this
 
 /* Constraints */
-a == b;
-a <= b;
-a >= b;
-a > b;
-a < b;
+c == b;
+c <= b;
+c >= b;
+c > b;
+c < b;
 
 /* Linear Arithmetic */
 sel[property] == a + 4;
@@ -26,9 +26,7 @@ sel[property] == 2 * b + 4;
 #light[years] == 400 !require;
 
 /* Rulesets */
-.selector {
-  width: == 4;
-}
+.selector { width: == 4; }
 
 .section > .article {
   .someclass {
@@ -50,13 +48,9 @@ div {
 }
 
 /* Properties */
-.container {
-    width: == #elm[width];
-}
+.container { width: == #elm[width]; }
 
-.container {
-    &[width] == #elm[width];
-}
+.container { &[width] == #elm[width]; }
 
 /* Conditionals */
 article {
@@ -67,5 +61,5 @@ article {
   @else  {
     width: == ^[width] / 2;
     height: == ^[height];
-  }
+  j
 }
