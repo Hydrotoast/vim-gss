@@ -63,3 +63,10 @@ article {
     height: == ^[height];
   j
 }
+
+/* Inline Comments */
+#container {
+  // Inline comment in ruleset
+  height == 100 !strong; // Inline comment after expression
+}
+// Outer inline comment

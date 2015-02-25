@@ -48,7 +48,7 @@ syn match gssInlineComments "//.*$"
 syn region gssBlockComments start="\/\*" end="\*\/"
 
 syn match gssConstraintExpressions /\v.*[=<>]{1,2}.*/ contains=gssConstraintOperators,gssArithmeticOperators,gssStrengths,gssCombinators,gssPropertyAccessors,gssReservedPseudos,gssConditionals,gssBlockComments,gssInlineComments
-syn region gssRulesets start="{" end="}" transparent contains=gssConstraintExpressions,gssBlockComments
+syn region gssRulesets start="{" end="}" transparent contains=gssConstraintExpressions,gssBlockComments,gssInlineComments
 
 hi link gssReservedPseudos Constant
 hi link gssProperty String
