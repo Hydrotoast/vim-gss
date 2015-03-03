@@ -16,3 +16,9 @@ installing this plugin.
 $ cd ~/.vim/bundle
 $ git clone https://github.com/Hydrotoast/vim-gss.git
 ```
+
+Todo
+----
+
+- Find a sensible color assignment
+- Support VFL
